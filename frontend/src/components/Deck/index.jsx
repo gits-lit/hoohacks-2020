@@ -75,6 +75,7 @@ const Deck = (props) =>  {
       trans={trans}
       data={props.data}
       bind={bind}
+      key={'card'+i}
     />
   ));
 }

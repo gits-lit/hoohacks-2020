@@ -1,6 +1,7 @@
 import Config from '../config';
 
 import { replace } from 'connected-react-router';
+import { GET_CARDS } from './types';
 
 export const submitWord = (word) => async dispatch => {
   try {
@@ -18,6 +19,14 @@ export const submitWord = (word) => async dispatch => {
     if (data.error) throw new Error(data.error.message);
     console.log('here');
     console.log(data)
+
+    dispatch({
+      type: GET_CARDS,
+      data: data
+    });
+
+    // Redirect to home on login.
+    dispatch(replace('/cards'));
 
   } catch (error) {
     console.error('uh oh')
