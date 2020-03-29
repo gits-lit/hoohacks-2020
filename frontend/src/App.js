@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import configureStore, { history } from './store';
 
 import Cards from './containers/Cards';
+import Home from './containers/Home';
 
 const store = configureStore();
 
@@ -15,7 +16,8 @@ const App = () => {
       <ConnectedRouter history={history}>
         <>
           <Switch>
-            <Route path="/" component={Cards} />
+            <Route exact path="/cards" component={Cards} />
+            <Route path="/" component={Home} />
           </Switch>
         </>
       </ConnectedRouter>
