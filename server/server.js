@@ -1,8 +1,18 @@
 let express = require('express');
 
 let server = express();
-let userRouter = require('./routes/users');
-let indexRouter = require('./routes/index');
+let firebase = require('firebase-admin');
+
+let serviceAccount = require('../firebase.json');
+
+firebase.initializeApp({
+    credential: firebase.credential.cert(serviceAccount)
+});
+
+let db = firebase.firestore();
+
+let userRouter = require('./routes/users')(firebase, db);
+let indexRouter = require('./routes/index')(db);
 
 server.use('/users', userRouter);
 server.use('/', userRouter);
