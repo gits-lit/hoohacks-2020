@@ -3,7 +3,7 @@ const request = require("request");
 
 function generateQuestions(text) {
     request({
-    url: 'https://evodms-dev.clientsolve.com/evoDMSDev/api/api_event_all.php',
+    url: 'https://app.quillionz.com:8243/quillionzapifree/1.0.0/API/SubmitContent_GetQuestions?shortAnswer=true&recall=true&mcq=true&whQuestions=false&title=Steve%20Jobs',
     headers: {
         'Authorization': 'Bearer 71D50F9987529'
     },
