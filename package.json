@@ -12,6 +12,8 @@
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "nuka-carousel": "^4.4.7",
+    "express": "^4.17.1",
+    "firebase-admin": "^8.10.0",
     "react": "^16.13.1",
     "react-app-rewired": "^2.1.5",
     "react-dom": "^16.13.1",
