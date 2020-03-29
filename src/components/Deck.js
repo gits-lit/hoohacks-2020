@@ -5,7 +5,7 @@ import { useGesture } from "react-with-gesture";
 import Card from "./Card";
 import data from "../data.js";
 
-import "../styles/Deck.css";
+import "../styles/Deck.less";
 
 const to = i => ({
   x: 0,
