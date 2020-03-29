@@ -1,50 +1,52 @@
 export default [
   {
     pics: [
-      "https://images.unsplash.com/photo-1520024146169-3240400354ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+      "https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com%2Fde9f8ec5-00b9-4074-81b8-9f2c50231051%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&w=1200&h=720"
     ],
-    name: "Heather",
-    age: 32,
+    name: "Grandma's Tofu",
+    age: "$$",
     distance: "4 miles away",
     text:
       "My nickname is Gilette because I'm the best a man can get. Also I will cut you."
   },
   {
     pics: [
-      "https://images.unsplash.com/photo-1522263842439-347f062b8475?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+      "https://cdn.vox-cdn.com/thumbor/PlGlhlCv6Qph0ZE_0p4WBNPRJxk=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9400227/20170828_182831_01.jpeg"
     ],
-    name: "Chloe",
-    age: 18,
-    distance: "1 mile away",
-    text: "The C and the L are silent."
-  },
-  {
-    pics: [
-      "https://images.unsplash.com/photo-1539758462369-43adaa19bc1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
-    ],
-    name: "Helen",
-    age: 19,
-    distance: "3 miles away",
-    text: "Aspiring MILF"
-  },
-  {
-    pics: [
-      "https://images.unsplash.com/photo-1514924801778-1db0aba75e9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-    ],
-    name: "Savannah",
-    age: 29,
-    distance: "3 miles away",
-    text: "A little known fact is that I cover about 40% of Africa."
-  },
-  {
-    pics: [
-      "https://images.unsplash.com/photo-1456885284447-7dd4bb8720bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-      "https://images.unsplash.com/photo-1532635270-c09dac425ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-    ],
-    name: "Jane",
-    age: 22,
-    distance: "2 miles away",
+    name: "Cross Street",
+    age: "$$",
+    distance: "4 miles away",
     text:
-      "On the first date I will carve our initials in a tree. It's the most romantic way to let you know I have a knife."
-  }
+      "My nickname is Gilette because I'm the best a man can get. Also I will cut you."
+  },
+  {
+    pics: [
+      "https://cdn.vox-cdn.com/thumbor/PlGlhlCv6Qph0ZE_0p4WBNPRJxk=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9400227/20170828_182831_01.jpeg"
+    ],
+    name: "Cross Street",
+    age: "$$",
+    distance: "4 miles away",
+    text:
+      "My nickname is Gilette because I'm the best a man can get. Also I will cut you."
+  },
+  {
+    pics: [
+      "https://cdn.vox-cdn.com/thumbor/PlGlhlCv6Qph0ZE_0p4WBNPRJxk=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9400227/20170828_182831_01.jpeg"
+    ],
+    name: "Cross Street",
+    age: "$$",
+    distance: "4 miles away",
+    text:
+      "My nickname is Gilette because I'm the best a man can get. Also I will cut you."
+  },
+  {
+    pics: [
+      "https://cdn.vox-cdn.com/thumbor/PlGlhlCv6Qph0ZE_0p4WBNPRJxk=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9400227/20170828_182831_01.jpeg"
+    ],
+    name: "Cross Street",
+    age: "$$",
+    distance: "4 miles away",
+    text:
+      "My nickname is Gilette because I'm the best a man can get. Also I will cut you."
+  },
 ];
