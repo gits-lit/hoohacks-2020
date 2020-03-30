@@ -16,14 +16,21 @@ router.get('/', async (req, res, next) => {
     }
 
     //get questions from wikipedia
-    let wikipediaContent = await getWikipediaData(search);
     try {
-    let questions = await generateQuestions(wikipediaContent.content, 
-        wikipediaContent.images);
-    res.send(questions);
-    } catch(err) {
-        let questions = backupQuestionGen(wikipediaContent.content, wikipediaContent.images);
-        res.send(questions);
+        let wikipediaContent = await getWikipediaData(search);
+        try {
+            let questions = await generateQuestions(wikipediaContent.content, wikipediaContent.images);
+            res.send(questions);
+        } catch(err) {
+            let questions = backupQuestionGen(wikipediaContent.content, wikipediaContent.images);
+            res.send(questions);
+        }
+    }  catch(err) {
+        res.send([{
+            question: "An Error Occurred",
+            answer: "GG!",
+            image: "https://i.imgur.com/Vg90nST.jpg"
+        }])
     }
 });
 
