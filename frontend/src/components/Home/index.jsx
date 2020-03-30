@@ -13,7 +13,7 @@ const Home = props => {
   return (
     <div className="home-page">
       <img className="header" src={header} alt={header} />
-      <p>Can’t decide on where to go? Swipe to find out!</p>
+      <p>AI-Generated flashcards on any topic in the word!</p>
       <Form layout="vertical" onFinish={onFinish}>
         <Form.Item className="input" name="word">
           <Input />

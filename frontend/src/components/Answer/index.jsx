@@ -17,7 +17,7 @@ const Answer = props => {
 
   return (
     <div className="answer-card" onClick={click}>
-      <b>Q:&nbsp;</b>
+      <b>A:&nbsp;</b>
       {text}
     </div>
   );
