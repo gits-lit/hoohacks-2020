@@ -16,11 +16,10 @@ const Home = props => {
       <p>Can’t decide on where to go? Swipe to find out!</p>
       <Form layout="vertical" onFinish={onFinish}>
         <Form.Item className="input" name="word">
-          <Input placeholder="input any word(s)"/>
+          <Input />
         </Form.Item>
       </Form>
-      <img className="footer"src={footer} alt={footer} />
-
+      <img className="footer" src={footer} alt={footer} />
     </div>
   );
 };
