@@ -15,55 +15,12 @@ router.get('/', async (req, res, next) => {
         })
     }
 
+    //get questions from wikipedia
     let wikipediaContent = await getWikiData(search);
     let questions = await generateQuestions(wikipediaContent.content, 
         wikipediaContent.images);
 
-
-
     res.send(questions);
-
-
-    // res.send(wikipediaContent);
-    // run magic here
-
-    
-    /*
-    res.send([
-        {
-            question: "Why did the chicken cross the road?",
-            answer: "to go to the other side"
-        },
-        {
-            question: "Why did the chicken cross the road?",
-            answer: "to go to the other side"
-        },
-        {
-            question: "Why did the chicken cross the road?",
-            answer: "to go to the other side"
-        },
-        {
-            question: "Why did the chicken cross the road?",
-            answer: "to go to the other side"
-        },
-        {
-            question: "Why did the chicken cross the road?",
-            answer: "to go to the other side"
-        },
-        {
-            question: "Why did the chicken cross the road?",
-            answer: "to go to the other side"
-        },
-        {
-            question: "Why did the chicken cross the road?",
-            answer: "to go to the other side"
-        },
-        {
-            question: "Why did the chicken cross the road?",
-            answer: "to go to the other side"
-        }
-    ])
-    */
 });
 
 module.exports = router;
