@@ -4,7 +4,7 @@ import Carousel from 'nuka-carousel';
 
 class Card extends React.Component {
   render() {
-    const { i, x, y, rot, scale, trans, bind, data } = this.props;
+    const { i, x, y, rot, scale, trans, bind, data, length } = this.props;
     const { question, answer, image } = data[i];
 
     return (
@@ -26,6 +26,7 @@ class Card extends React.Component {
           <div className="card">
             <img src={image} alt="profilePicture" />
             <h2>{question}</h2>
+            <div className="count">{length - i} / {length}</div>
           </div>
         </animated.div>
       </animated.div>

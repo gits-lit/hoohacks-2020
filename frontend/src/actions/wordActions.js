@@ -1,7 +1,7 @@
 import Config from '../config';
 
 import { replace } from 'connected-react-router';
-import { GET_CARDS } from './types';
+import { GET_CARDS, GO_RIGHT, GO_LEFT, RESET } from './types';
 
 export const submitWord = (word) => async dispatch => {
   try {
@@ -19,10 +19,16 @@ export const submitWord = (word) => async dispatch => {
     if (data.error) throw new Error(data.error.message);
     console.log('here');
     console.log(data)
+    let answers = []
+    for (let i = 0; i < data.length; i++) {
+      const card = data[i];
+      answers.push(card.answer);
+    }
 
     dispatch({
       type: GET_CARDS,
-      data: data
+      data: data,
+      answers: answers
     });
 
     // Redirect to home on login.
@@ -32,3 +38,21 @@ export const submitWord = (word) => async dispatch => {
     console.error('uh oh')
   }
 };
+
+export const goRight = () => async dispatch => {
+  dispatch({
+    type: GO_RIGHT
+  });
+}
+
+export const goLeft = () => async dispatch => {
+  dispatch({
+    type: GO_LEFT
+  });
+}
+
+export const reset = () => async dispatch => {
+  dispatch({
+    type: RESET
+  });
+}

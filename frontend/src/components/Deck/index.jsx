@@ -47,6 +47,13 @@ const Deck = (props) =>  {
         const isGone = gone.has(index);
 
         const x = isGone ? (200 + window.innerWidth) * dir : down ? xDelta : 0;
+        if (isGone) {
+          if(x > 0) {
+            props.goRight();
+          } else {
+            props.goLeft();
+          }
+        }
 
         const rot = xDelta / 100 + (isGone ? dir * 10 * velocity : 0);
 
@@ -60,8 +67,10 @@ const Deck = (props) =>  {
         };
       });
 
-      if (!down && gone.size === props.data.length)
+      if (!down && gone.size === props.data.length) {
+        props.reset();
         setTimeout(() => gone.clear() || set(i => to(i)), 600);
+      }
     }
   );
 
@@ -76,6 +85,7 @@ const Deck = (props) =>  {
       data={props.data}
       bind={bind}
       key={'card'+i}
+      length={props.data.length}
     />
   ));
 }
