@@ -16,9 +16,13 @@ router.get('/', async (req, res, next) => {
     }
 
     let wikipediaContent = await getWikiData(search);
-    let questions = await generateQuestions(wikipediaContent);
+    let questions = await generateQuestions(wikipediaContent.content, 
+        wikipediaContent.images);
+
+
 
     res.send(questions);
+
 
     // res.send(wikipediaContent);
     // run magic here

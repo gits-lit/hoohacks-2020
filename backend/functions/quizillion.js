@@ -1,11 +1,7 @@
 const request = require("request");
 const axios = require('axios');
-const QuillionzApiFree = require('quillionz_api_free');
-const defaultClient = QuillionzApiFree.ApiClient.instance;
-let def = defaultClient.authentications['default'];
-def.accessToken = process.env.API_KEY;
 
-function generateQuestions(text) {
+function generateQuestions(text, images) {
     //     return new Promise((resolve, reject) => {request({
     //     url: "https://app.quillionz.com:8243/quillionzapifree/1.0.0/API/SubmitContent_GetQuestions?shortAnswer=true&recall=true&mcq=true&whQuestions=false&title=Steve%20Jobs",
     //     headers: {
@@ -54,7 +50,7 @@ function generateQuestions(text) {
 
     var options = {
         'method': 'POST',
-        'url': 'https://app.quillionz.com:8243/quillionzapifree/1.0.0/API/SubmitContent_GetQuestions?shortAnswer=true&recall=true&mcq=true&whQuestions=false&title=Steve%20Jobs',
+        'url': 'https://app.quillionz.com:8243/quillionzapifree/1.0.0/API/SubmitContent_GetQuestions?shortAnswer=false&recall=true&mcq=false&whQuestions=false&title=Steve%20Jobs',
         'headers': {
             'Authorization': 'Bearer ' + process.env.API_KEY,
             'Content-Type': 'text/plain'
@@ -64,16 +60,23 @@ function generateQuestions(text) {
     return new Promise((resolve, reject) => {
         request(options, function (error, response) {
             if (error) throw new Error(error);
-            debugger;
-            console.log(response);
-            console.log(response.body);
 
-            resolve(response.body);
+            console.log(response.body);
+            let questionObject = JSON.parse(response.body);
+            let questionArray = questionObject.Data.recall;
+            let qa = [];
+
+            for (let i = 0; i < 15; i++) {
+                qa.push({
+                    question: questionArray[i].Question,
+                    answer: questionArray[i].Answer,
+                    image: images[i % images.length]
+                })
+            }
+
+            resolve(qa);
         });
     });
-
-
-
 }
 
 module.exports = generateQuestions;

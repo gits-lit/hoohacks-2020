@@ -8,7 +8,10 @@ module.exports = (search) => {
             // const images = await page.images();
             // const qaArray = generateQA(await page.rawContent(), images)
 
-            resolve(page.rawContent());
+            resolve({
+                content: await page.rawContent(),
+                images: await page.images()
+            });
         })
         .catch(err => reject(err));
     })
