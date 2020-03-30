@@ -5,10 +5,10 @@ module.exports = (search) => {
         wiki()
         .page(search)
         .then(async page => {
-            const images = await page.images();
-            const qaArray = generateQA(await page.rawContent(), images)
+            // const images = await page.images();
+            // const qaArray = generateQA(await page.rawContent(), images)
 
-            resolve(qaArray);
+            resolve(page.rawContent());
         })
         .catch(err => reject(err));
     })
