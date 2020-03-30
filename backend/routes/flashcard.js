@@ -1,4 +1,5 @@
 const getWikiData = require("../functions/wiki")
+const generateQuestions = require("../functions/quizillion");
 const express = require('express');
 const router = express.Router();
 
@@ -15,9 +16,18 @@ router.get('/', async (req, res, next) => {
     }
 
     let wikipediaContent = await getWikiData(search);
+    let questions = await generateQuestions(wikipediaContent.content, 
+        wikipediaContent.images);
 
-    res.send(wikipediaContent);
+
+
+    res.send(questions);
+
+
+    // res.send(wikipediaContent);
     // run magic here
+
+    
     /*
     res.send([
         {

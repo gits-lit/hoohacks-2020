@@ -7,6 +7,7 @@
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
@@ -15,6 +16,7 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11",
+    "quillionz_api_free": "^1.0.0",
     "wikijs": "^6.0.1"
   },
   "devDependencies": {
