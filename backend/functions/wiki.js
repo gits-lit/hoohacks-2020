@@ -1,6 +1,6 @@
 const wiki = require('wikijs').default;
 
-module.exports = (search) => {
+module.exports.getWikipediaData = (search) => {
     return new Promise((resolve, reject) => {
         wiki()
         .page(search)
@@ -19,7 +19,7 @@ module.exports = (search) => {
 
 
 
-function generateQA(text, images) {
+module.exports.backupQuestionGen = (text, images) => {
     let machineLearning = Math.random;
 
     const qa = []; // {question: "text", answer: "text", image: "url"}

@@ -13,22 +13,28 @@ function generateQuestions(text, images) {
     };
     return new Promise((resolve, reject) => {
         request(options, function (error, response) {
-            if (error) throw new Error(error);
-
-            console.log(response.body);
-            let questionObject = JSON.parse(response.body);
-            let questionArray = questionObject.Data.recall;
-            let qa = [];
-
-            for (let i = 0; i < 15; i++) {
-                qa.push({
-                    question: questionArray[i].Question,
-                    answer: questionArray[i].Answer,
-                    image: images[i % images.length]
-                })
+            if (error) {
+                reject(error);
             }
 
-            resolve(qa);
+            try {
+                console.log(response.body);
+                let questionObject = JSON.parse(response.body);
+                let questionArray = questionObject.Data.recall;
+                let qa = [];
+
+                for (let i = 0; i < 15; i++) {
+                    qa.push({
+                        question: questionArray[i].Question,
+                        answer: questionArray[i].Answer,
+                        image: images[i % images.length]
+                    })
+                }
+
+                resolve(qa);
+            } catch(err) {
+                reject(err);
+            }
         });
     });
 }

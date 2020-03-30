@@ -1,5 +1,5 @@
-const getWikiData = require("../functions/wiki")
-const generateQuestions = require("../functions/quizillion");
+const {getWikipediaData, backupQuestionGen} = require("../functions/wiki")
+const  generateQuestions = require("../functions/quizillion");
 const express = require('express');
 const router = express.Router();
 
@@ -16,11 +16,15 @@ router.get('/', async (req, res, next) => {
     }
 
     //get questions from wikipedia
-    let wikipediaContent = await getWikiData(search);
+    let wikipediaContent = await getWikipediaData(search);
+    try {
     let questions = await generateQuestions(wikipediaContent.content, 
         wikipediaContent.images);
-
     res.send(questions);
+    } catch(err) {
+        let questions = backupQuestionGen(wikipediaContent.content, wikipediaContent.images);
+        res.send(questions);
+    }
 });
 
 module.exports = router;
