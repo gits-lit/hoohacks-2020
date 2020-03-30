@@ -1,20 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 
-import Deck from '../components/Deck';
+import Deck from './Deck';
+import Analytics from '../components/Analytics';
 
 const CardsContainer = props => {
   return (
-    <Deck
-      data={props.data}/>
+    <>
+      <Deck />
+      <Analytics />
+    </>
   );
 };
 
-const mapStateToProps = state => ({
-  data: state.cards.data
-});
-
-export default connect(
-  mapStateToProps,
-  null
-)(CardsContainer);
+export default CardsContainer;

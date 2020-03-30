@@ -1,28 +1,28 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
 
-import "./style.less";
+import header from '../../assets/header.svg';
+import footer from '../../assets/footer.svg'
+import './style.less';
 
 const Home = props => {
-
   const onFinish = values => {
     props.submitWord(values.word);
   };
 
   return (
     <div className="home-page">
+      <img className="header" src={header} alt={header} />
+      <p>Can’t decide on where to go? Swipe to find out!</p>
       <Form layout="vertical" onFinish={onFinish}>
-        <Form.Item label="Word" name="word">
-          <Input />
-        </Form.Item>
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
+        <Form.Item className="input" name="word">
+          <Input placeholder="input any word(s)"/>
         </Form.Item>
       </Form>
+      <img className="footer"src={footer} alt={footer} />
+
     </div>
   );
-}
+};
 
 export default Home;

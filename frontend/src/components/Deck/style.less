@@ -20,7 +20,6 @@ body {
 #root {
   background: salmon;
   position: fixed;
-  overflow: hidden;
   width: 100%;
   height: 100%;
   cursor: url("https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png")
@@ -44,20 +43,31 @@ body {
   background-size: auto 85%;
   background-repeat: no-repeat;
   background-position: center center;
-  width: 300px;
+  width: 60vw;
   max-width: 300px;
-  height: 550px;
+  height: 60vw;
   max-height: 570px;
   will-change: transform;
   border-radius: 10px;
   box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
     0 10px 10px -10px rgba(50, 50, 73, 0.3);
+  font-size: .5rem;
+  overflow: scroll !important;
+  padding: 20px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 img {
-  height: 380px;
+  width: 100%;
+  height: 30vw;
+  object-fit: contain;
+  text-align: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  margin-bottom: 10px;
 }
 
 button[aria-label="previous"],
@@ -85,18 +95,22 @@ h5:last-of-type {
   color: darkgray;
 }
 
-.card > div {
-  height: 380px !important;
-}
-
-.card {
-  height: 500px !important;
-}
-
 .slider-control-bottomcenter {
   bottom: -15px !important;
 }
 
 .slider-control-bottomcenter > ul > li > button {
   color: salmon !important;
+}
+
+.count {
+  position: absolute;
+  right: 20px;
+  height: 2px;
+}
+
+.white {
+  position: absolute;
+  height: 50px;
+  background-color: red;
 }

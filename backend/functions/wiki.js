@@ -36,7 +36,9 @@ function generateQA(text, images) {
         do {
             wordIndex = Math.floor(machineLearning() * words.length);
             word = words[wordIndex];
-        } while (word.length < 5 || tries++ < 4);
+            console.log(tries)
+            ++tries;
+        } while (word.length < 5 && tries < 4);
 
         
         words[wordIndex] = "______";
