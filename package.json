@@ -1,0 +1,19 @@
+{
+  "name": "hoohacks-2020",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "scripts": {
+	"start" : "cd backend && npm install && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garrettluu/hoohacks-2020.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garrettluu/hoohacks-2020/issues"
+  },
+  "homepage": "https://github.com/garrettluu/hoohacks-2020#readme"
+}

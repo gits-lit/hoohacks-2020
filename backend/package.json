@@ -17,6 +17,7 @@
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11",
     "quillionz_api_free": "^1.0.0",
+    "request": "^2.88.2",
     "wikijs": "^6.0.1"
   },
   "devDependencies": {
