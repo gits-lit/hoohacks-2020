@@ -4,7 +4,7 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "scripts": {
-	"start" : "cp -rf .env backend/ && cd backend && npm install && npm start"
+	"start" : "cp -rf .env backend/ ; cd backend && npm install && npm start"
   },
   "repository": {
     "type": "git",
