@@ -9,8 +9,10 @@ const Analytics = props => {
   return (
     <div className="analytics-card">
       <Answer />
-      <Wrong />
-      <Right />
+      <div className="horizontal">
+        <Wrong />
+        <Right />
+      </div>
     </div>
   );
 }

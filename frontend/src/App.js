@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 
 import configureStore, { history } from './store';
 
-import Cards from './containers/Cards';
+import Cards from './components/Cards';
 import Home from './containers/Home';
 
 const store = configureStore();
