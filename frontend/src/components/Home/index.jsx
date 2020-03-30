@@ -16,7 +16,7 @@ const Home = props => {
       <p>AI-Generated flashcards on any topic in the world!</p>
       <Form layout="vertical" onFinish={onFinish}>
         <Form.Item className="input" name="word">
-          <Input />
+          <Input autoComplete="off"/>
         </Form.Item>
       </Form>
       <img className="footer" src={footer} alt={footer} />
